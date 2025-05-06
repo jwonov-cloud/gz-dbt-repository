@@ -4,7 +4,27 @@
      tables:
        - name: product
          identifier: raw_gz_product
+         description: products of Greenweez
+         columns:
+           - name: products_id
+             description: id of products table
+             tests:
+               - unique
+               - not_null
        - name: sales
          identifier: raw_gz_sales
+         description: sales of Greenweez / we have on row per products_id found in each orders_id
+         columns:
+           - name: date_date
+             description: date of purchase
+           - name: orders_id
+             description: id of orders
+           - name: products_id
+             description: id of products
        - name: ship
          identifier: raw_gz_ship
+         description: shipping of Greenweez
+         columns:
+           - name: orders_id
+             description: id of orders for shipping table
+           
