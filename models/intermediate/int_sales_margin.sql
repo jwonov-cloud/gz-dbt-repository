@@ -7,9 +7,9 @@ USING(products_id)),
 
 rename AS(
 SELECT *,
-quantity * CAST(purchse_price AS FLOAT64) AS purchase_cost
+ROUND(quantity * CAST(purchse_price AS FLOAT64),2) AS purchase_cost
 FROM source)
 
 SELECT *,
-revenue - purchase_cost AS margin
+ROUND(revenue - purchase_cost, 2) AS margin
 FROM rename
