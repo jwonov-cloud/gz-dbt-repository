@@ -10,7 +10,5 @@ ROUND((margin + shipping_fee) - (logcost + ship_cost),2) AS operational_margin
 FROM source)
 
 SELECT
-orders_id,
-date_date,
-operational_margin
+*
 FROM renamed
